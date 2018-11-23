@@ -1,0 +1,12 @@
+{% extends 'coins/base.html'%}
+
+{% block title%}Query Page{%endblock title%}
+
+{% block content%}
+    <h2>Query page</h2>
+    <form method="post">{% csrf_token%}
+        <input type="number"  placeholder="Enter amount" name="query_data"/>
+        <input type="submit" value="Query"/>
+
+    </form>
+{% endblock content%}

@@ -1,0 +1,21 @@
+{% extends 'coins/base.html'%}
+
+{% block title%}Detail Page{%endblock title%}
+
+{% block content%}
+  {% if error%}
+    <h2>Error page</h2>
+    <p>{{error}}</p>
+    <a href="{% url 'query_page'%}">Query again</a>
+  {% else%}
+    <h2>Detail page</h2>
+    <p>Entered: {{query_data}}</p>
+    {% for key,value in answer.items%}
+      <p><img src="{{value.url}}" height="100" width="200"> {{value.count}}</p>
+    {% endfor%}
+
+
+    <p><a href="{% url 'query_page'%}">Query again</a></p>
+  {% endif%}
+
+{% endblock content%}
